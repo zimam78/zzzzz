@@ -1,0 +1,91 @@
+body {
+    background: #f0e5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.envelope {
+    position: relative;
+    width: 250px;
+    height: 180px;
+    background: #ff6f61;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    margin: auto;
+    transition: all 0.5s ease-in-out;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #d94f4f;
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    z-index: 2;
+}
+
+.letter {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: 230px;
+    height: 140px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(120%);
+    transition: transform 0.5s;
+    z-index: 1;
+}
+
+.letter p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.to {
+    font-weight: bold;
+}
+
+.hearts {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.envelope.open .flap {
+    transform: rotateX(-180deg);
+}
+
+.envelope.open .letter {
+    transform: translateY(0);
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-weight: bold;
+    border: 2px solid #d94f4f;
+    background: transparent;
+    color: #d94f4f;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d94f4f;
+    color: white;
+}
